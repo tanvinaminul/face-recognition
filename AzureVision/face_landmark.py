@@ -10,12 +10,12 @@ from PIL import Image, ImageDraw, ImageFont
 Example 2. Detect faces landmarks from an image (from a local file)
 """
 
-credential = json.load(open('AzureCloudKeys.json'))
-API_KEY = credential['API_KEY']
-ENDPOINT = credential['ENDPOINT']
+API_KEY = "8eecbafb4729456498bf48a11238c58f"
+ENDPOINT = "https://aminulface.cognitiveservices.azure.com/"
+
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(API_KEY))
 
-img_file = open(r'.\Images\group1.jpg', 'rb')
+img_file = open(r'.\Images\face1.jpg', 'rb')
 
 response_detected_faces = face_client.face.detect_with_stream(
     image=img_file,
