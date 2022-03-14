@@ -10,19 +10,18 @@ from PIL import Image, ImageDraw, ImageFont
 Example 4. Detect if a face shows up in other photos/images
 """
 
-credential = json.load(open('AzureCloudKeys.json'))
-API_KEY = credential['API_KEY']
-ENDPOINT = credential['ENDPOINT']
+API_KEY = "8eecbafb4729456498bf48a11238c58f"
+ENDPOINT = "https://aminulface.cognitiveservices.azure.com/"
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(API_KEY))
 
 response_detected_faces = face_client.face.detect_with_stream(
-    image=open(r'.\images\group1.jpg', 'rb'),
+    image= open(r'.\Images\face1.jpg', 'rb'),
     detection_model='detection_03',
     recognition_model='recognition_04',  
 )
 face_ids = [face.face_id for face in response_detected_faces]
 
-img_source = open(r'.\Images\mj3.jpg', 'rb')
+img_source = open(r'.\Images\face3.jpg', 'rb')
 response_face_source = face_client.face.detect_with_stream(
     image=img_source,
     detection_model='detection_03',
@@ -35,9 +34,9 @@ matched_faces = face_client.face.find_similar(
     face_ids=face_ids
 )
 
-img = Image.open(open(r'.\images\group1.jpg', 'rb'))
+img = Image.open(open(r'.\Images\face1.jpg', 'rb'))
 draw = ImageDraw.Draw(img)
-font = ImageFont.truetype(r'C:\Windows\Fonts\OpenSans-Bold.ttf', 25)
+font = ImageFont.truetype(r'C:\Windows\Fonts\Arial.ttf', 15)
 
 for matched_face in matched_faces:
     for face in response_detected_faces:

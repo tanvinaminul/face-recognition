@@ -12,12 +12,12 @@ Example 3. Guess a person's emotion & age
 | https://docs.microsoft.com/en-us/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-python
 """
 
-credential = json.load(open('AzureCloudKeys.json'))
-API_KEY = credential['API_KEY']
-ENDPOINT = credential['ENDPOINT']
+API_KEY = "8eecbafb4729456498bf48a11238c58f"
+ENDPOINT = "https://aminulface.cognitiveservices.azure.com/"
+
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(API_KEY))
 
-img_file = open('1.jpg', 'rb')
+img_file = open(r'.\Images\face2.jpg', 'rb')
 
 response_detection = face_client.face.detect_with_stream(
     image=img_file,
@@ -28,7 +28,7 @@ response_detection = face_client.face.detect_with_stream(
 
 img = Image.open(img_file)
 draw = ImageDraw.Draw(img)
-font = ImageFont.truetype(r'C:\Windows\Fonts\OpenSans-Bold.ttf', 35)
+font = ImageFont.truetype(r'C:\Windows\Fonts\Arial.ttf', 15)
 for face in response_detection:
     age = face.face_attributes.age
     emotion = face.face_attributes.emotion

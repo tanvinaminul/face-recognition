@@ -10,9 +10,8 @@ from PIL import Image, ImageDraw, ImageFont
 Example 5. Check if a perosn in differnet images are the same perosn
 """
 
-credential = json.load(open('AzureCloudKeys.json'))
-API_KEY = credential['API_KEY']
-ENDPOINT = credential['ENDPOINT']
+API_KEY = "8eecbafb4729456498bf48a11238c58f"
+ENDPOINT = "https://aminulface.cognitiveservices.azure.com/"
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(API_KEY))
 
 face_verified = face_client.face.verify_face_to_face(
