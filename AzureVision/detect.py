@@ -14,7 +14,7 @@ API_KEY = "8eecbafb4729456498bf48a11238c58f"
 ENDPOINT = "https://aminulface.cognitiveservices.azure.com/"
 
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(API_KEY))
-image_url = "https://github.com/tanvinaminul/face-recognition/blob/master/AzureVision/Images/face%20(1).jpg"
+image_url = "https://lh3.googleusercontent.com/pw/AM-JKLWihuQfkjmAu7AG5xRaoCnB9PI5VI6dZGcXhqVtIMk6L9swLa0M8WziWt0uVOTjTEY03WKKzAppzFt62mbpYT9C5x5n-gI0S8TmfOzUOg2X6CceLspAVqWSKyXN96r7C6YNHSGXUw7xm1wK2utNAAjNXg=w2249-h1686-no?authuser=0"
 image_name = os.path.basename(image_url)
 
 response_detected_faces = face_client.face.detect_with_url(
