@@ -12,7 +12,7 @@ Also using face ID we can compare one face with another.
 ## Installation
 Crearte python virtual environment and install some ppip package
 ```python
-python -n venv AzureVision
+python -m venv AzureVision
 cd AzureVision
 Scripts\activate
 pip install azure.cognitiveservices.vision.face pillow pandas
