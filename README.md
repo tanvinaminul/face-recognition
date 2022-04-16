@@ -24,6 +24,15 @@ Place your image in the '/Images' folder
 Run the code in terminal
 
 You will get output in the popup window
+
+## Output
+
+* Output in face detection:
+![Output in face detection:](Images/output1.png?raw=true "Face")
+
+
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
